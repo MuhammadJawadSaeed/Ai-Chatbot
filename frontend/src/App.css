@@ -2,13 +2,12 @@
 .chat-container {
   max-width: 800px;
   margin: 0 auto;
-  height: 100%;
+  height: 95vh;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: auto;
 }
 
 /* Chat Header */
@@ -30,7 +29,7 @@
 .chat-messages {
   flex: 1;
   padding: 1rem;
-  overflow-y: auto;
+  overflow-y: auto; /* ✅ only scrolls when overflow */
   background-color: #f8f9fa;
   display: flex;
   flex-direction: column;
@@ -178,19 +177,21 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .chat-container {
-    height: 100%;
+    height: 100vh;
     border-radius: 0;
     max-width: 100%;
   }
-  
+  .chat-messages {
+    overflow-y: auto; /* ✅ only scrolls when overflow */
+  }
   .chat-header {
     border-radius: 0;
   }
-  
+
   .chat-input {
     border-radius: 0;
   }
-  
+
   .message {
     max-width: 85%;
   }

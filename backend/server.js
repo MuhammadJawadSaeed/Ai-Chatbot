@@ -7,7 +7,9 @@ const { text } = require("stream/consumers");
 
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
-  /* options */
+  cors:{
+    origin:"http://localhost:5173"
+  }
 });
 
 const chatHistory = [];
